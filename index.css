@@ -1,0 +1,47 @@
+.Turns{
+	position: absolute;
+	top: 30%;
+	text-align: center;
+	margin: 0 auto;
+	display: none;
+}
+.Computer{
+	text-align: right;
+}
+.User{
+	text-align: left;
+}
+.Values{
+	position: absolute;
+	top: 30%;
+	text-align: center;
+	margin: 0 auto;
+	display: none;
+}
+.X{
+	text-align: right;
+}
+.O{
+	text-align: left;
+}
+.Game{
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	top: 30%;
+	height: 300px;
+}
+.game{
+	padding: 0;
+	margin-left: 30%;
+	margin-right: 20%;
+	height: 500px;
+	
+}
+.game li{
+	display: inline-flex;
+	width: 30%;
+	margin-top: 10px;
+	height: 100px;
+	background-color: whitesmoke;
+}
