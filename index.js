@@ -19,7 +19,7 @@ $(document).ready(function(){
 		}
 		//console.log(turns);
 		console.log(check);
-		console.log(u);
+		//console.log(u);
 		turns++;
 	});
 	var computerturns = [];
@@ -33,40 +33,49 @@ $(document).ready(function(){
 				}
 			}
 		}
-		var pos=0;
+		var pos=0,d=0;
 		for (var i = 0; i < check.length; i++) {
 			for (var j = i+1; j < check.length-1; j++) {
-				if (check[j]==check[i]){//&&((click.indexOf(wins[check[i]][0])!=-1)||(click.indexOf(wins[check[i]][1])!=-1)||(click.indexOf(wins[check[i]][2])!=-1))) {
+				if ((check[j]==check[i])&&((click.indexOf(wins[check[i]][0])==-1)||(click.indexOf(wins[check[i]][1])==-1)||(click.indexOf(wins[check[i]][2])==-1))) {
 					pos = check[i];
-					break;
 				}
 			}
-		}
+		} 
 		console.log(pos);
-		if(click.indexOf(wins[pos][0])!=-1){
-			console.log("obj");
+		
+		
+		if(click.indexOf(String(wins[pos][0]))==-1){
+			console.log("obj1");
 			$('.'+wins[pos][0]).html(o);
-			click[m++] = wins[pos][0];
+			click[m++] = String(wins[pos][0]);
 		}
-		else if (click.indexOf(wins[pos][1])!=-1) {
-			console.log("obj");
+		else if (click.indexOf(String(wins[pos][1]))==-1) {
+			console.log("obj2");
 			$('.'+wins[pos][1]).html(o);
-			click[m++] = wins[pos][1];
+			click[m++] = String(wins[pos][1]);
 		}
-		else if(click.indexOf(wins[pos][2])!=-1){
-			console.log("obj");
+		else if(click.indexOf(String(wins[pos][2]))==-1){
+			console.log("obj3");
 			$('.'+wins[pos][2]).html(o);
-			click[m++] = wins[pos][2];
+			click[m++] = String(wins[pos][2]);
 		}
-		else{
-			var x = Math.random()%8;
-			var y = Math.random()%3;
-			if (click.indexOf(wins[x][y])!=-1) {
-				$('.'+wins[x][y]).html(o);
+		else {
+			var d =0;
+			for (var i = 0; i < wins.length; i++) {
+				for (var j = 0; j < wins[i].length; j++) {
+					if(click.indexOf(String(wins[i][j]))==-1){
+						d=wins[i][j];
+					}
+				}
 			}
-		}
+			if (d!=0) {
+				$('.'+d).html(o);
+				click[m++] = String(d);
+			}
+		}	
 		turns++;
-		//console.log(userturns);	
+
+
 	}
 
 });
